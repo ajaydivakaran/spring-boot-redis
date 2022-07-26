@@ -1,0 +1,14 @@
+{
+  "name": "spring-boot-redis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "redis-ui:start": "redis-commander --redis-host localhost --redis-port 6380",
+    "redis-ui:open": "open http://127.0.0.1:8081"
+  },
+  "author": "",
+  "devDependencies": {
+    "redis-commander": "^0.8.0"
+  }
+}
