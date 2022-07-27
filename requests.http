@@ -1,0 +1,13 @@
+### Create user
+POST localhost:8080/users
+Content-Type: application/json
+
+{
+  "name": "TestUser"
+}
+
+### Retrieve user by id obtained from create user response
+GET localhost:8080/users/519b800e-8af8-4d84-adc2-3129da1ae8bc
+Accept: application/json
+
+

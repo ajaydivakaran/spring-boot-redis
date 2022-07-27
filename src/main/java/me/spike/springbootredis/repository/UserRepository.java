@@ -4,20 +4,24 @@ import me.spike.springbootredis.domain.CreateUserRequest;
 import me.spike.springbootredis.domain.User;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class UserRepository {
-    public static final String HASH_KEY = "users-hk";
+    private static final String HASH_KEY = "user";
     private final HashOperations<String, String, UserDto> redisTemplate;
 
     public UserRepository(HashOperations<String, String, UserDto> redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
 
+    @Transactional
     public void save(CreateUserRequest newUser, String id) {
         redisTemplate.put(id, HASH_KEY, new UserDto(newUser.getName(), id));
+        redisTemplate.getOperations().expire(id, 10, TimeUnit.SECONDS);
     }
 
     public Optional<User> find(String id) {
