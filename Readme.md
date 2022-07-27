@@ -16,6 +16,11 @@ Refer `requests.http`
 
 ##### Redis UI commands
 * To view hash entry `HGETALL <user-uuid>`
+* To view key entry `GET <user-uuid>`
+
+##### Persistence approaches
+* Refer branch `value-approach` to view Redis repository using KEY/VALUE pairs
+* Refer branch `main` to view Redis repository using HASHES
 
 
 ##### References
