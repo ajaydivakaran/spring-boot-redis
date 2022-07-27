@@ -1,6 +1,6 @@
 package me.spike.springbootredis;
 
-import me.spike.springbootredis.repository.UserDto;
+import me.spike.springbootredis.repository.UserDbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,8 +18,8 @@ public class SpringBootRedisApplication {
 	}
 
 	@Bean
-	public RedisTemplate<String, UserDto> createRedisTemplate(RedisConnectionFactory connectionFactory){
-		final RedisTemplate<String, UserDto> template = new RedisTemplate<>();
+	public RedisTemplate<String, UserDbo> createRedisTemplate(RedisConnectionFactory connectionFactory){
+		final RedisTemplate<String, UserDbo> template = new RedisTemplate<>();
 		template.setConnectionFactory(connectionFactory);
 		template.setKeySerializer(new StringRedisSerializer());
 		template.setHashKeySerializer(new StringRedisSerializer());
@@ -30,8 +30,8 @@ public class SpringBootRedisApplication {
 	}
 
 	@Bean
-	public HashOperations<String, String, UserDto> createRedisHashOperation(
-			RedisTemplate<String, UserDto> redisTemplate) {
+	public HashOperations<String, String, UserDbo> createRedisHashOperation(
+			RedisTemplate<String, UserDbo> redisTemplate) {
 		return redisTemplate.opsForHash();
 	}
 
