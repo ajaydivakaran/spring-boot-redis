@@ -7,6 +7,7 @@
 
 ##### Steps to start application
 * Run containers in background `docker-compose up -d`
+* Install npm dependencies `npm i`
 * Start Redis UI (foreground command) `npm run redis-ui:start`
 * Browse Redis UI `npm run redis-ui:open`
 * Run Spring Boot application `./gradlew bootRun`
