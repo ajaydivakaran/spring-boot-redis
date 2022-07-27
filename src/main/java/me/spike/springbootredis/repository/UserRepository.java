@@ -21,7 +21,7 @@ public class UserRepository {
     @Transactional
     public void save(CreateUserRequest newUser, String id) {
         redisTemplate.put(id, HASH_KEY, new UserDto(newUser.getName(), id));
-        redisTemplate.getOperations().expire(id, 10, TimeUnit.SECONDS);
+        redisTemplate.getOperations().expire(id, 30, TimeUnit.SECONDS);
     }
 
     public Optional<User> find(String id) {

@@ -7,12 +7,15 @@
 
 ##### Steps to start application
 * Run containers in background `docker-compose up -d`
-* Start Redis UI `npm run redis-ui:start`
+* Start Redis UI (foreground command) `npm run redis-ui:start`
 * Browse Redis UI `npm run redis-ui:open`
 * Run Spring Boot application `./gradlew bootRun`
 
 ##### Sample requests
 Refer `requests.http`
+
+##### Redis UI commands
+* To view hash entry `HGETALL <user-uuid>`
 
 
 ##### References
