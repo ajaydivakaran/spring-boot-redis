@@ -7,7 +7,7 @@ Content-Type: application/json
 }
 
 ### Retrieve user by id obtained from create user response
-GET localhost:8080/users/519b800e-8af8-4d84-adc2-3129da1ae8bc
+GET localhost:8080/users/598882a7-0fd3-49a1-9a46-89dd70a58209
 Accept: application/json
 
 
