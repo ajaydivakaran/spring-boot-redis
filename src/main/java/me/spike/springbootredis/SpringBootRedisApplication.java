@@ -22,8 +22,7 @@ public class SpringBootRedisApplication {
 		final RedisTemplate<String, UserDto> template = new RedisTemplate<>();
 		template.setConnectionFactory(connectionFactory);
 		template.setKeySerializer(new StringRedisSerializer());
-		template.setHashKeySerializer(new StringRedisSerializer());
-		template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());
+		template.setValueSerializer(new GenericJackson2JsonRedisSerializer());
 		template.setEnableTransactionSupport(true);
 		template.afterPropertiesSet();
 		return template;
